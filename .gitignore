@@ -1,0 +1,3 @@
+*.pyc
+config/production_settings.py
+config/local_settings.py
