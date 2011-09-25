@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>Page title</title>
+<title>{% block title %}Page title{% endblock %}</title>
 <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
 <script type="text/javascript" src="{{ STATIC_URL }}js/libs/modernizr-2.0.6.min.js"></script>
 {% block head %}{% endblock %}
@@ -14,6 +14,7 @@
 </head>
 <body>
 <div id="container">
+<a href="/">Core</a>&nbsp;<a href="/app1/">App1</a>
 {% block body %}{% endblock %}
 </div>
 </body>

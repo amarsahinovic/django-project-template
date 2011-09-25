@@ -34,6 +34,7 @@ MEDIA_URL = '/media/'
 
 
 # Set static url and static directory to apps/static
+# apps/static is for static files shared among apps, for app specific look below
 STATIC_URL = '/static/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 STATICFILES_DIRS = (
@@ -42,6 +43,7 @@ STATICFILES_DIRS = (
 
 
 # Where to look for out static files
+# Per app static files should be in apps/APPNAME/static/APPNAME/
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -67,7 +69,7 @@ TEMPLATE_LOADERS = (
 
 
 # Template dir, set to apps/templates
-# Per app templates should be in apps/templates/APPNAME/
+# Per app templates should be in apps/APPNAME/templates/APPNAME/
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, 'apps', 'templates').replace('\\','/')
 )
