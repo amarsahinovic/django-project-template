@@ -30,6 +30,6 @@ Directories `static/` and `media/` contain their own .gitignore files, so that f
 
 Directory `docs/` is for documentation.
 
-### Note: In the default `repo_local_settings.py` and `repo_production_settings.py` I have used `psycopg2` as the database ENGINE, so if you don't use this, change it before starting the project, otherwise you will see some errors.
+### Note: In the default `repo_local_settings.py` and `repo_production_settings.py` I have used `psycopg2` as the database ENGINE, so if you don't use this, change it before starting the project, otherwise you will see some errors and the project will not start.
 
-Also included in this template is HTML5 Boilerplate, and two dummy apps just to test if everything works.
+Also included in this template is [HTML5 Boilerplate](http://html5boilerplate.com/), and two dummy apps just to test if everything works.
