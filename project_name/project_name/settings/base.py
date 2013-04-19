@@ -32,7 +32,7 @@ STATICFILES_FINDERS = (
 )
 
 STATICFILES_DIRS = (
-    root('static')
+    root('static'),
 )
 
 STATIC_ROOT = root('..', 'public', 'static')
@@ -48,7 +48,7 @@ TEMPLATE_LOADERS = (
 )
 
 TEMPLATE_DIRS = (
-    root('templates')
+    root('templates'),
 )
 
 SECRET_KEY = r'{{ secret_key }}'
