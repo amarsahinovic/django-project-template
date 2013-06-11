@@ -90,6 +90,7 @@ DJANGO_APPS = (
 )
 
 THIRD_PARTY_APPS = (
+    'foundation',
     #'south',
     #'easy_thumbnails',
     #'django_extensions',
