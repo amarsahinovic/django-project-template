@@ -9,7 +9,7 @@ from django.conf import settings
 urlpatterns = patterns('',
     # Examples:
     url(r'^', include('pages.urls')),
-    url(r'^', include('foundation.urls')),
+    url(r'^foundation/', include('foundation.urls')),
     # url(r'^$', 'ithub.views.home', name='home'),
     # url(r'^ithub/', include('ithub.foo.urls')),
 
