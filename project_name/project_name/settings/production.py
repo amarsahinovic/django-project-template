@@ -39,3 +39,6 @@ CACHES = {
 }
 
 SECRET_KEY = '----------------- CHANGE ME --------------------'
+# Set this to something valid, otherwise we have 500 Server Error. 
+# DO NOT use '*' in production
+ALLOWED_HOSTS = []
