@@ -10,8 +10,6 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^', include('pages.urls')),
     url(r'^foundation/', include('foundation.urls')),
-    # url(r'^$', 'ithub.views.home', name='home'),
-    # url(r'^ithub/', include('ithub.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
