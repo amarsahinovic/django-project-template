@@ -2,10 +2,11 @@
 import os
 import sys
 
-here = lambda * x: os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), *x))
-PROJECT_ROOT = here("..", "..")
-root = lambda * x: os.path.normpath(os.path.join(os.path.abspath(PROJECT_ROOT), *x))
-sys.path.append(PROJECT_ROOT)
+# One level more then the default generated BASE_DIR since we have settings in directory
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+
+root = lambda * x: os.path.normpath(os.path.join(os.path.abspath(BASE_DIR), *x))
+sys.path.append(BASE_DIR)
 
 ADMINS = (
    # ('Your name', 'yourname@example.com'),
@@ -15,10 +16,9 @@ MANAGERS = ADMINS
 
 TIME_ZONE = 'Europe/Sarajevo'
 LANGUAGE_CODE = 'bs-ba'
-SITE_ID = 1
-USE_I18N = False
+USE_I18N = True
 USE_L10N = True
-USE_TZ = False
+USE_TZ = True
 
 DATE_FORMAT = '%d.%m.%Y.'
 DATETIME_FORMAT = '%d.%m.%Y. %H:%i'
@@ -54,8 +54,8 @@ TEMPLATE_DIRS = (
 SECRET_KEY = r'{{ secret_key }}'
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
