@@ -76,7 +76,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 ROOT_URLCONF = '{{ project_name }}.urls'
 WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
 
-SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+SESSION_ENGINE = 'redis_sessions.session'
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 DJANGO_APPS = (
@@ -93,6 +93,7 @@ THIRD_PARTY_APPS = (
     'foundation',
     'south',
     'django_extensions',
+    'djcelery',
 )
 
 LOCAL_APPS = (
@@ -128,4 +129,10 @@ LOGGING = {
         },
     }
 }
+
+EMAIL_HOST = 'smtp.mailgun.org'
+EMAIL_HOST_USER = 'postmaster@--- CHANGE ME ---'
+EMAIL_HOST_PASSWORD = '--- CHANGE ME ---'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 

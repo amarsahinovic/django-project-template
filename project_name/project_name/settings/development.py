@@ -36,12 +36,21 @@ REDIS = urlparse.urlparse(REDIS_URL)
 
 CACHES = {
     'default': {
-        'BACKEND': 'redis_cache.RedisCache',
-        'LOCATION': '%s:%s' % (REDIS.hostname, REDIS.port),
+        'BACKEND': 'redis_cache.cache.RedisCache',
+        'LOCATION': '%s:%s:1' % (REDIS.hostname, REDIS.port),
         'OPTIONS': {
-            'DB': 0,
             'PASSWORD': REDIS.password,
-            'PARSER_CLASS': 'redis.connection.HiredisParser'
+            'PARSER_CLASS': 'redis.connection.HiredisParser',
+            "CLIENT_CLASS": "redis_cache.client.HerdClient",
         }
     }
 }
+
+BROKER_URL = REDIS_URL
+BROKER_TRANSPORT_OPTIONS = {'fanout_prefix': True}
+CELERY_RESULT_BACKEND='djcelery.backends.database:DatabaseBackend'
+CELERYBEAT_SCHEDULER = "djcelery.schedulers.DatabaseScheduler"
+CELERY_ACCEPT_CONTENT = ['pickle', 'json']
+
+SESSION_REDIS_PREFIX = 'session'
+
