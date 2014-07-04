@@ -26,6 +26,7 @@ DATABASE_URL = 'postgres://{0}:{1}@localhost:5432/{2}'.format(DATABASE_USER,
 
 DATABASE_URL = os.getenv('DATABASE_URL', DATABASE_URL)
 DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
+DATABASES['default']['CONN_MAX_AGE'] = 300
 
 REDIS_URL = 'redis://localhost:6379'
 REDIS_URL = os.getenv('REDIS_URL', REDIS_URL)
