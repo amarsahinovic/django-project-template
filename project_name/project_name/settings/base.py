@@ -29,6 +29,7 @@ DATETIME_INPUT_FORMATS = (DATETIME_FORMAT,)
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 STATICFILES_DIRS = (
@@ -94,6 +95,7 @@ THIRD_PARTY_APPS = (
     'south',
     'django_extensions',
     'djcelery',
+    'compressor',
 )
 
 LOCAL_APPS = (
@@ -136,3 +138,6 @@ EMAIL_HOST_PASSWORD = '--- CHANGE ME ---'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'django_libsass.SassCompiler'),
+)
