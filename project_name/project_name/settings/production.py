@@ -1,9 +1,13 @@
 from .base import *
 import os
-import urlparse
 import dj_database_url
 
-print 'Using production settings'
+try:
+    from urlparse import urlparse
+except ImportError as e:
+    from urllib.parse import urlparse
+
+print('Using production settings')
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -30,7 +34,7 @@ DATABASES['default']['CONN_MAX_AGE'] = 300
 
 REDIS_URL = 'redis://localhost:6379'
 REDIS_URL = os.getenv('REDIS_URL', REDIS_URL)
-REDIS = urlparse.urlparse(REDIS_URL)
+REDIS = urlparse(REDIS_URL)
 
 CACHES = {
     'default': {

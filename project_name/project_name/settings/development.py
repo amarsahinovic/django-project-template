@@ -1,9 +1,13 @@
 from .base import *
 import os
-import urlparse
 import dj_database_url
 
-print 'Using development settings'
+try:
+    from urlparse import urlparse
+except ImportError as e:
+    from urllib.parse import urlparse
+
+print('Using development settings')
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -32,7 +36,7 @@ DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
 
 REDIS_URL = 'redis://localhost:6379'
 REDIS_URL = os.getenv('REDIS_URL', REDIS_URL)
-REDIS = urlparse.urlparse(REDIS_URL)
+REDIS = urlparse(REDIS_URL)
 
 CACHES = {
     'default': {

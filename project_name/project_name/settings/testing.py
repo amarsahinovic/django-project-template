@@ -1,6 +1,6 @@
 from .base import *
 
-print 'Using testing settings'
+print('Using testing settings')
 
 DATABASES = {
     'default': {
