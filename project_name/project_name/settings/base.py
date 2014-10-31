@@ -92,7 +92,6 @@ DJANGO_APPS = (
 
 THIRD_PARTY_APPS = (
     'foundation',
-    'south',
     'django_extensions',
     'djcelery',
     'compressor',
