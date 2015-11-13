@@ -16,6 +16,7 @@ MANAGERS = ADMINS
 
 TIME_ZONE = 'Europe/Sarajevo'
 LANGUAGE_CODE = 'bs-ba'
+SITE_ID = 1
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
