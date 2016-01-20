@@ -12,10 +12,9 @@ ENV_ACTIVATE = 'source ./env/bin/activate'
 COMMANDS = [
     'git pull',
     'pip install --upgrade -r requirements.txt',
-    './manage.py syncdb --settings {{ project_name }}.settings.production',
     './manage.py migrate --settings {{ project_name }}.settings.production',
     './manage.py collectstatic --noinput --settings {{ project_name }}.settings.production',
-    'chown -R www-data:www-data .',
+    'chown -R www-data:www-data ..',
     'service {{ project_name }} restart',
     'service {{ project_name }}-celery restart',
     'service {{ project_name }}-celery-beat restart',
